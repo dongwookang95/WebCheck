@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "puppeteer": "^1.19.0"
+    "puppeteer": "^1.19.0",
+    "twilio": "^3.33.4"
   }
 }
