@@ -2,7 +2,7 @@
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 const accountSid = 'AC4ba661edab5f347199fad6e5f86c167a'; 
-const authToken = '5f6984a478d4a781eb0975666c595f08'; 
+const authToken = abc;
 const client = require('twilio')(accountSid, authToken); 
 
 
