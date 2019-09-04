@@ -44,7 +44,6 @@ async function check(){
 
     // scenario 2: file exists, same contents
     if(contents === brandNames.toString()){
-        console.log('contents are the same');
         return
     }
 
@@ -53,25 +52,24 @@ async function check(){
     }
     if(contents !== brandNames.toString()){
         //To do send notification.
-        console.log('contents are the different');
-    // client.messages 
-    //   .create({ 
-    //      body: 'A product is updated. Please check off---white.com', 
-    //      from: '+3197014201884',       
-    //      to: '+31625322775‎'
-    //    }) 
-    //   .then(message => console.log(message.sid)) 
-    //   .done();
+    client.messages 
+      .create({ 
+         body: 'A product is updated. Please check off---white.com', 
+         from: '+3197014201884',       
+         to: '+31625322775‎'
+       }) 
+      .then(message => console.log(message.sid)) 
+      .done();
+    client.messages 
+      .create({ 
+         body: 'This message is test message', 
+         from: '+3197014201884',       
+         to: '+31638361771'
+       }) 
+      .then(message => console.log(message.sid)) 
+      .done();
 
 
-    // client.messages 
-    //   .create({ 
-    //      body: 'This message is test message', 
-    //      from: '+3197014201884',       
-    //      to: '+31638361771'
-    //    }) 
-    //   .then(message => console.log(message.sid)) 
-    //   .done();
         fs.writeFileSync("brandname.txt", brandNames.toString());
     }
 }
