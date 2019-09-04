@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "docker build . -t dongwookang95/webcheck:latest",
+    "launch": "docker run --rm -it dongwookang95/webcheck:latest",
+    "push": "docker push dongwookang95/webcheck:latest"
   },
   "keywords": [],
   "author": "",

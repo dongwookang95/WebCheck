@@ -1,18 +1,21 @@
 
 const fs = require('fs');
 const puppeteer = require('puppeteer');
+const accountSid = 'AC4ba661edab5f347199fad6e5f86c167a'; 
+const authToken = '5f6984a478d4a781eb0975666c595f08'; 
+const client = require('twilio')(accountSid, authToken); 
+
 
 async function run() {
     check();
     setTimeout(() => {
         run();
-    }, 50000);
+    }, 5000);
 };
-
 async function check(){
     const browser = await puppeteer.launch({
         args: [
-            '--incognito',
+            '--no-sandbox', 'disable-setuid-sandbox'
         ],
         headless: false
     });
@@ -44,9 +47,31 @@ async function check(){
         console.log('contents are the same');
         return
     }
+
+    if(brandNames.toString == null){
+
+    }
     if(contents !== brandNames.toString()){
         //To do send notification.
-        console.log('contents are different');
+        console.log('contents are the different');
+    // client.messages 
+    //   .create({ 
+    //      body: 'A product is updated. Please check off---white.com', 
+    //      from: '+3197014201884',       
+    //      to: '+31625322775‎'
+    //    }) 
+    //   .then(message => console.log(message.sid)) 
+    //   .done();
+
+
+    // client.messages 
+    //   .create({ 
+    //      body: 'This message is test message', 
+    //      from: '+3197014201884',       
+    //      to: '+31638361771'
+    //    }) 
+    //   .then(message => console.log(message.sid)) 
+    //   .done();
         fs.writeFileSync("brandname.txt", brandNames.toString());
     }
 }
