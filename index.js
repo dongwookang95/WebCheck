@@ -1,8 +1,8 @@
 
 const fs = require('fs');
 const puppeteer = require('puppeteer');
-const accountSid = abc; 
-const authToken = abc;
+const accountSid = process.env.ACCOUNT_SID; 
+const authToken = process.env.AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken); 
 
 
