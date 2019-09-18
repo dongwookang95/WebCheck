@@ -1,6 +1,7 @@
 # WebScraper
 
 ## Overview
+- Based on Javascript(Node.js)
 - Scraping a website to check update
 - Automatic notification to your phone
 - Cloud server(DigitalOcean)
